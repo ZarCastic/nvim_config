@@ -1,0 +1,8 @@
+require("plugins")
+require("colors")
+require("options")
+require("keymaps")
+require("lualine-config")
+require("lsp-config")
+require("nvimtree-config")
+require("treesitter-config")
