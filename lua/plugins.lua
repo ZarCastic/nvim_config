@@ -12,6 +12,11 @@ require("packer").startup(function()
 	use("sbdchd/neoformat")
 	use({ "nvim-telescope/telescope.nvim", tag = "master", requires = { { "nvim-lua/plenary.nvim" } } })
 	use("tpope/vim-commentary")
-	use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" }, tag = "nightly" })
+	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
 	use("airblade/vim-gitgutter")
+	use({
+		"ms-jpq/coq_nvim",
+		requires = { { "ms-jpq/coq.artifacts", branch = "artifacts" }, { "ms-jpq/coq.thirdparty", branch = "3p" } },
+		branch = "coq",
+	})
 end)
