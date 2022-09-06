@@ -4,48 +4,103 @@ local navic = require("nvim-navic")
 local util = require("lspconfig.util")
 local coq = require("coq")
 
-local function on_attach(client, buffer)
+local function on_attach_keys(client, buffer)
+	-- Enable completion triggered by <c-x><c-o>
+	vim.api.nvim_buf_set_option(buffer, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
+	-- Mappings.
+	-- See `:help vim.lsp.*` for documentation on any of the below functions
+	local bufopts = { noremap = true, silent = true, buffer = buffer }
+	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+	vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+	vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+	vim.keymap.set("n", "<leader>wl", function()
+		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+	end, bufopts)
+	vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
+	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+end
+
+local function on_attach_navic(client, buffer)
 	navic.attach(client, buffer)
 end
 
+
 lsp_config.bashls.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	cmd = lsp_containers.command("bashls"),
 }))
 
 lsp_config.clangd.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	cmd = lsp_containers.command("clangd"),
 }))
 
 lsp_config.dockerls.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	cmd = lsp_containers.command("dockerls"),
 }))
 
 lsp_config.gopls.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	cmd = lsp_containers.command("gopls"),
 }))
 
 lsp_config.jsonls.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	cmd = lsp_containers.command("jsonls"),
 }))
 
-lsp_config.pyright.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
-	cmd = lsp_containers.command("pyright"),
+lsp_config.pylsp.setup({
+	on_attach = function(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	root_dir = util.root_pattern("settings.toml", "mypy.ini", "requirements.txt", ".git"),
-}))
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					maxLineLength = 100,
+				},
+			},
+		},
+	},
+})
 
 lsp_config.rust_analyzer.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	cmd = lsp_containers.command("rust_analyzer"),
 }))
 
 lsp_config.sumneko_lua.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	cmd = lsp_containers.command("sumneko_lua"),
 	settings = {
 		Lua = {
@@ -57,16 +112,36 @@ lsp_config.sumneko_lua.setup(coq.lsp_ensure_capabilities({
 }))
 
 lsp_config.tsserver.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	-- cmd = lsp_containers.command("tsserver"),
 }))
 
 lsp_config.yamlls.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	-- cmd = lsp_containers.command("yamlls"),
 }))
 
 lsp_config.vuels.setup(coq.lsp_ensure_capabilities({
-	on_attach = on_attach,
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
 	-- cmd = lsp_containers.command("vuels"),
+}))
+
+lsp_config.cucumber_language_server.setup(coq.lsp_ensure_capabilities({
+	on_attach = function(client, buffer)
+		on_attach_navic(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
+	root_dir = util.root_pattern(".behaverc", "requirements.txt", ".git"),
+	settings = {
+		glue = { "steps/**/*.py" },
+	},
 }))
