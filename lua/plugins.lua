@@ -13,7 +13,7 @@ require("packer").startup(function()
 	use({ "nvim-telescope/telescope.nvim", tag = "master", requires = { { "nvim-lua/plenary.nvim" } } })
 	use("tpope/vim-commentary")
 	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
-	use("airblade/vim-gitgutter")
+	use("lewis6991/gitsigns.nvim")
 	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
