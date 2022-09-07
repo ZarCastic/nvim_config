@@ -15,8 +15,18 @@ require("packer").startup(function()
 	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
 	use("airblade/vim-gitgutter")
 	use({
-		"ms-jpq/coq_nvim",
-		requires = { { "ms-jpq/coq.artifacts", branch = "artifacts" }, { "ms-jpq/coq.thirdparty", branch = "3p" } },
-		branch = "coq",
+		"hrsh7th/nvim-cmp",
+		requires = {
+			{
+				"hrsh7th/cmp-nvim-lsp",
+				"hrsh7th/cmp-buffer",
+				"hrsh7th/cmp-path",
+				"hrsh7th/cmp-cmdline",
+				"hrsh7th/cmp-vsnip",
+				"hrsh7th/vim-vsnip",
+				"petertriho/cmp-git",
+				"nvim-lua/plenary.nvim",
+			},
+		},
 	})
 end)

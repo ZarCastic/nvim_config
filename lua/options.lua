@@ -24,16 +24,9 @@ vim.o.mouse = "a"
 vim.o.foldmethod = "syntax"
 vim.o.autoread = true
 vim.o.autowrite = true
+vim.o.completeopt = "menu,menuone,noselect"
 
-
--- Let's save undo info!
--- if !isdirectory($HOME."/.config/nvim")
---     call mkdir($HOME."/.config.nvim", "", 0770)
--- endif
--- if !isdirectory($HOME."/.config/nvim/undo-dir")
---     call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
--- endif
 vim.o.undofile = true
 
 -- completion
-vim.g.coq_settings = { auto_start = true }
+-- vim.g.coq_settings = { auto_start = true }
