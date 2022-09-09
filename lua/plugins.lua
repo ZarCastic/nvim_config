@@ -19,6 +19,7 @@ require("packer").startup(function()
 		requires = {
 			"nvim-lua/popup.nvim",
 			"nvim-lua/plenary.nvim",
+			{ "akinsho/toggleterm.nvim", tag = "*" },
 			"nvim-telescope/telescope.nvim",
 		},
 	})
@@ -38,5 +39,9 @@ require("packer").startup(function()
 				"nvim-lua/plenary.nvim",
 			},
 		},
+	})
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2",
 	})
 end)
