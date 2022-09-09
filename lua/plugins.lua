@@ -15,10 +15,20 @@ require("packer").startup(function()
 	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
 	use("lewis6991/gitsigns.nvim")
 	use({
+		"EthanJWright/vs-tasks.nvim",
+		requires = {
+			"nvim-lua/popup.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+	use("jiangmiao/auto-pairs")
+	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
 			{
 				"hrsh7th/cmp-nvim-lsp",
+				"hrsh7th/cmp-nvim-lua",
 				"hrsh7th/cmp-buffer",
 				"hrsh7th/cmp-path",
 				"hrsh7th/cmp-cmdline",

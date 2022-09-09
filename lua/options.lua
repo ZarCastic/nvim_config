@@ -25,8 +25,5 @@ vim.o.foldmethod = "syntax"
 vim.o.autoread = true
 vim.o.autowrite = true
 vim.o.completeopt = "menu,menuone,noselect"
-
 vim.o.undofile = true
 
--- completion
--- vim.g.coq_settings = { auto_start = true }
