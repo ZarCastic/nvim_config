@@ -45,7 +45,7 @@ lsp_config.clangd.setup({
 		on_attach_navic(client, buffer)
 		on_attach_keys(client, buffer)
 	end,
-	cmd = lsp_containers.command("clangd"),
+	cmd = lsp_containers.command("clangd", { image = "clangd-lsp:v0.3.0" }),
 })
 
 lsp_config.dockerls.setup({

@@ -1,6 +1,6 @@
 require("packer").startup(function()
 	use("wbthomason/packer.nvim")
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	-- use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("folke/tokyonight.nvim")
 	use({
 		"nvim-lualine/lualine.nvim",
