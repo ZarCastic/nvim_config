@@ -36,7 +36,7 @@ lsp_config.bashls.setup({
 		on_attach_navic(client, buffer)
 		on_attach_keys(client, buffer)
 	end,
-	cmd = lsp_containers.command("bashls"),
+	-- cmd = lsp_containers.command("bashls"),
 })
 
 lsp_config.clangd.setup({
@@ -45,7 +45,7 @@ lsp_config.clangd.setup({
 		on_attach_navic(client, buffer)
 		on_attach_keys(client, buffer)
 	end,
-	cmd = lsp_containers.command("clangd", { image = "clangd-lsp:v0.3.0" }),
+	-- cmd = lsp_containers.command("clangd", { image = "clangd-lsp:v0.3.0" }),
 })
 
 lsp_config.dockerls.setup({
@@ -54,7 +54,7 @@ lsp_config.dockerls.setup({
 		on_attach_navic(client, buffer)
 		on_attach_keys(client, buffer)
 	end,
-	cmd = lsp_containers.command("dockerls"),
+	-- cmd = lsp_containers.command("dockerls"),
 })
 
 lsp_config.gopls.setup({
@@ -63,7 +63,7 @@ lsp_config.gopls.setup({
 		on_attach_navic(client, buffer)
 		on_attach_keys(client, buffer)
 	end,
-	cmd = lsp_containers.command("gopls"),
+	-- cmd = lsp_containers.command("gopls"),
 })
 
 lsp_config.pylsp.setup({
@@ -89,6 +89,9 @@ lsp_config.rust_analyzer.setup({
 		on_attach_navic(client, buffer)
 		on_attach_keys(client, buffer)
 	end,
+	settings = {
+		["rust-analyzer"] = { checkOnSave = { command = "clippy" } },
+	},
 	-- cmd = lsp_containers.command("rust_analyzer"),
 })
 
@@ -114,7 +117,7 @@ lsp_config.tsserver.setup({
 		on_attach_navic(client, buffer)
 		on_attach_keys(client, buffer)
 	end,
-	cmd = lsp_containers.command("tsserver"),
+	-- cmd = lsp_containers.command("tsserver"),
 })
 
 lsp_config.yamlls.setup({
@@ -123,7 +126,7 @@ lsp_config.yamlls.setup({
 		on_attach_navic(client, buffer)
 		on_attach_keys(client, buffer)
 	end,
-	cmd = lsp_containers.command("yamlls"),
+	-- cmd = lsp_containers.command("yamlls"),
 })
 
 lsp_config.vuels.setup({
@@ -132,7 +135,7 @@ lsp_config.vuels.setup({
 		on_attach_navic(client, buffer)
 		on_attach_keys(client, buffer)
 	end,
-	cmd = lsp_containers.command("vuels"),
+	-- cmd = lsp_containers.command("vuels"),
 })
 
 lsp_config.cucumber_language_server.setup({

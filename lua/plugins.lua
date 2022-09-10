@@ -40,8 +40,4 @@ require("packer").startup(function()
 			},
 		},
 	})
-	use({
-		"phaazon/hop.nvim",
-		branch = "v2",
-	})
 end)

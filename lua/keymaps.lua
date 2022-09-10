@@ -5,28 +5,6 @@ vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = 
 vim.api.nvim_set_keymap("n", "<leader>f", ":Neoformat<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader><leader>", "<C-6>", { noremap = true, silent = true })
 
--- movement
-vim.api.nvim_set_keymap(
-	"n",
-	"f",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {}
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"F",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {}
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"t",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {}
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"T",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {}
-)
-
 -- split movement
 vim.api.nvim_set_keymap("n", "<leader>l", "<C-W><C-L>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", "<C-W><C-H>", { noremap = true })

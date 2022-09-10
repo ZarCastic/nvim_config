@@ -21,9 +21,8 @@ vim.o.showmode = false
 vim.o.showtabline = 2
 vim.o.signcolumn = "yes"
 vim.o.mouse = "a"
-vim.o.foldmethod = "syntax"
 vim.o.autoread = true
 vim.o.autowrite = true
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.undofile = true
-vim.o.winbar = "%=%m%F"
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}%=%m%F"
