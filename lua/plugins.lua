@@ -40,5 +40,9 @@ require("packer").startup(function()
 			},
 		},
 	})
-  use("tpope/vim-dispatch")
+	use("tpope/vim-dispatch")
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	})
 end)
