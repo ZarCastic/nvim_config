@@ -40,4 +40,5 @@ require("packer").startup(function()
 			},
 		},
 	})
+  use("tpope/vim-dispatch")
 end)
