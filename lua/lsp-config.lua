@@ -166,3 +166,11 @@ lsp_config.cmake.setup({
 		on_attach_navic(client, buffer)
 	end,
 })
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+require("lspconfig").jsonls.setup({
+	capabilities = capabilities,
+	on_attach = function(client, buffer)
+		on_attach_keys(client, buffer)
+	end,
+})
