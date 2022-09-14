@@ -2,6 +2,7 @@ local lsp_config = require("lspconfig")
 local lsp_containers = require("lspcontainers")
 local util = require("lspconfig.util")
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local navic = require("nvim-navic")
 
 local function on_attach_keys(client, buffer)
 	vim.api.nvim_buf_set_option(buffer, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -25,10 +26,15 @@ local function on_attach_keys(client, buffer)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 end
 
+local function on_attach_navic(client, buffer)
+	navic.attach(client, buffer)
+end
+
 lsp_config.bashls.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	-- cmd = lsp_containers.command("bashls"),
 })
@@ -37,6 +43,7 @@ lsp_config.clangd.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	-- cmd = lsp_containers.command("clangd", { image = "clangd-lsp:v0.3.0" }),
 })
@@ -45,6 +52,7 @@ lsp_config.dockerls.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	-- cmd = lsp_containers.command("dockerls"),
 })
@@ -53,6 +61,7 @@ lsp_config.gopls.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	-- cmd = lsp_containers.command("gopls"),
 })
@@ -61,6 +70,7 @@ lsp_config.pylsp.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	root_dir = util.root_pattern("settings.toml", "mypy.ini", "requirements.txt", ".git"),
 	settings = {
@@ -78,6 +88,7 @@ lsp_config.rust_analyzer.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	settings = {
 		["rust-analyzer"] = { checkOnSave = { command = "clippy" } },
@@ -89,6 +100,7 @@ lsp_config.sumneko_lua.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	cmd = lsp_containers.command("sumneko_lua"),
 	settings = {
@@ -104,6 +116,7 @@ lsp_config.tsserver.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	-- cmd = lsp_containers.command("tsserver"),
 })
@@ -112,6 +125,7 @@ lsp_config.yamlls.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	-- cmd = lsp_containers.command("yamlls"),
 })
@@ -120,6 +134,7 @@ lsp_config.vuels.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	-- cmd = lsp_containers.command("vuels"),
 })
@@ -128,6 +143,7 @@ lsp_config.cucumber_language_server.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 	root_dir = util.root_pattern(".behaverc", "requirements.txt", ".git"),
 	settings = {
@@ -139,6 +155,7 @@ lsp_config.marksman.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 })
 
@@ -146,5 +163,6 @@ lsp_config.cmake.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		on_attach_keys(client, buffer)
+		on_attach_navic(client, buffer)
 	end,
 })

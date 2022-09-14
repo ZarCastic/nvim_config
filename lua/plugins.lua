@@ -1,6 +1,6 @@
 require("packer").startup(function()
 	use("wbthomason/packer.nvim")
-	-- use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("folke/tokyonight.nvim")
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -41,8 +41,4 @@ require("packer").startup(function()
 		},
 	})
 	use("tpope/vim-dispatch")
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	})
 end)
