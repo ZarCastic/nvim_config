@@ -41,4 +41,5 @@ require("packer").startup(function()
 		},
 	})
 	use("tpope/vim-dispatch")
+	use("klen/nvim-config-local")
 end)
