@@ -4,11 +4,11 @@ vim.api.nvim_set_keymap("n", "<Esc>", ":noh<cr>", { noremap = true, silent = tru
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>f", ":Neoformat<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader><leader>", "<C-6>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>y", "\"+y", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<leader>y", "\"+y", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>p", "\"+p", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<leader>p", "\"+p", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>y", '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>p", '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>p", '"+p', { noremap = true, silent = true })
 
 -- split movement
 vim.api.nvim_set_keymap("n", "<leader>l", "<C-W><C-L>", { noremap = true })
@@ -27,6 +27,12 @@ vim.api.nvim_set_keymap(
 	"n",
 	"<leader>r",
 	"<cmd>:lua require('telescope').extensions.vstask.tasks()<CR>",
+	{ noremap = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>i",
+	"<cmd>:lua require('telescope').extensions.vstask.inputs()<CR>",
 	{ noremap = true }
 )
 
