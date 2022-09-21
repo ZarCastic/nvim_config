@@ -1,6 +1,5 @@
 -- general configuration
-vim.api.nvim_set_keymap("n", "<CR>", ":w<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Esc>", ":noh<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<CR>", ":w<cr>:noh<cr>", { noremap = true })
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>f", ":Neoformat<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader><leader>", "<C-6>", { noremap = true, silent = true })
@@ -23,18 +22,6 @@ vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i",
 vim.api.nvim_set_keymap("n", "<C-P>", "<cmd>Telescope find_files<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-F>", "<cmd>Telescope live_grep<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-B>", "<cmd>Telescope buffers<cr>", { noremap = true })
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>r",
-	"<cmd>:lua require('telescope').extensions.vstask.tasks()<CR>",
-	{ noremap = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>i",
-	"<cmd>:lua require('telescope').extensions.vstask.inputs()<CR>",
-	{ noremap = true }
-)
 
 -- nvim tree
 vim.api.nvim_set_keymap("n", "<C-N>", "<cmd>:CHADopen<cr>", { noremap = true })

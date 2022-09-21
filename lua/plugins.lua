@@ -14,6 +14,7 @@ require("packer").startup(function()
 	use("tpope/vim-commentary")
 	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
 	use("lewis6991/gitsigns.nvim")
+	use({ "akinsho/toggleterm.nvim", tag = "*" })
 	use({
 		"EthanJWright/vs-tasks.nvim",
 		requires = {
@@ -23,7 +24,7 @@ require("packer").startup(function()
 			"nvim-telescope/telescope.nvim",
 		},
 	})
-	use("jiangmiao/auto-pairs")
+	use("windwp/nvim-autopairs")
 	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
