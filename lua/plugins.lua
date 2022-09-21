@@ -43,4 +43,11 @@ require("packer").startup(function()
 	})
 	use("tpope/vim-dispatch")
 	use({ "MunifTanjim/exrc.nvim", requires = { { "MunifTanjim/nui.nvim" } } })
+	use({
+		"anuvyklack/windows.nvim",
+		requires = {
+			"anuvyklack/middleclass",
+			"anuvyklack/animation.nvim",
+		},
+	})
 end)
