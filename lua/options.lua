@@ -27,3 +27,6 @@ vim.o.completeopt = "menu,menuone,noselect"
 vim.o.undofile = true
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}%=%m%F"
 vim.o.syntax = true
+
+
+vim.cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
