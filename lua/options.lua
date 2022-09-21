@@ -26,3 +26,4 @@ vim.o.autowrite = true
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.undofile = true
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}%=%m%F"
+vim.o.syntax = true

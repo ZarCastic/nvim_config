@@ -12,7 +12,7 @@ require("vstask").setup({
 	term_opts = {
 		vertical = {
 			direction = "vertical",
-			size = "120",
+			size = "100",
 		},
 		horizontal = {
 			direction = "horizontal",

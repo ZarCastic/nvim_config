@@ -1,7 +1,7 @@
 require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use("folke/tokyonight.nvim")
+	use("tanvirtin/monokai.nvim")
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
@@ -42,5 +42,5 @@ require("packer").startup(function()
 		},
 	})
 	use("tpope/vim-dispatch")
-	use("klen/nvim-config-local")
+	use({ "MunifTanjim/exrc.nvim", requires = { { "MunifTanjim/nui.nvim" } } })
 end)
