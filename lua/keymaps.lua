@@ -3,7 +3,6 @@ vim.api.nvim_set_keymap("n", "<CR>", ":w<cr>:noh<cr>", { noremap = true })
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>f", ":Neoformat<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader><leader>", "<C-6>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>y", '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>p", '"+p', { noremap = true, silent = true })
@@ -19,7 +18,7 @@ vim.api.nvim_set_keymap("n", "<leader>vs", ":vs<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i", { noremap = true })
 
 -- telescope
-vim.api.nvim_set_keymap("n", "<C-P>", "<cmd>Telescope find_files<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-P>", "<cmd>Telescope find_files hidden=true<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-F>", "<cmd>Telescope live_grep<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-B>", "<cmd>Telescope buffers<cr>", { noremap = true })
 
