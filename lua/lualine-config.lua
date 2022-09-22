@@ -1,5 +1,4 @@
 local lualine = require("lualine")
-local navic = require("nvim-navic")
 
 -- Color table for highlights
 -- stylua: ignore
@@ -29,7 +28,6 @@ local conditions = {
 		local gitdir = vim.fn.finddir(".git", filepath .. ";")
 		return gitdir and #gitdir > 0 and #gitdir < #filepath
 	end,
-	navic_is_available = navic.is_available,
 }
 
 -- Config
@@ -137,11 +135,6 @@ ins_left({
 		color_warn = { fg = colors.yellow },
 		color_info = { fg = colors.cyan },
 	},
-})
-
-ins_left({
-	navic.get_location,
-	cond = navic.is_available,
 })
 
 -- Insert mid section. You can make any number of sections in neovim :)
