@@ -15,15 +15,6 @@ require("packer").startup(function()
 	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
 	use("lewis6991/gitsigns.nvim")
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
-	use({
-		"EthanJWright/vs-tasks.nvim",
-		requires = {
-			"nvim-lua/popup.nvim",
-			"nvim-lua/plenary.nvim",
-			{ "akinsho/toggleterm.nvim", tag = "*" },
-			"nvim-telescope/telescope.nvim",
-		},
-	})
 	use("windwp/nvim-autopairs")
 	use({
 		"hrsh7th/nvim-cmp",
@@ -41,13 +32,5 @@ require("packer").startup(function()
 			},
 		},
 	})
-	use("tpope/vim-dispatch")
 	use({ "MunifTanjim/exrc.nvim", requires = { { "MunifTanjim/nui.nvim" } } })
-	use({
-		"anuvyklack/windows.nvim",
-		requires = {
-			"anuvyklack/middleclass",
-			"anuvyklack/animation.nvim",
-		},
-	})
 end)

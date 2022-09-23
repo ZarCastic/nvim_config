@@ -7,6 +7,8 @@ vim.api.nvim_set_keymap("n", "<leader>y", '"+y', { noremap = true, silent = true
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>p", '"+p', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<leader>p", '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>P", '"+P', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>P", '"+P', { noremap = true, silent = true })
 
 -- split movement
 vim.api.nvim_set_keymap("n", "<leader>l", "<C-W><C-L>", { noremap = true })
@@ -15,7 +17,7 @@ vim.api.nvim_set_keymap("n", "<leader>k", "<C-W><C-K>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>j", "<C-W><C-J>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>sp", ":sp<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>vs", ":vs<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20<CR> i", { noremap = true })
 
 -- telescope
 vim.api.nvim_set_keymap("n", "<C-P>", "<cmd>Telescope find_files hidden=true<cr>", {noremap = true})
