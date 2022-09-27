@@ -33,4 +33,5 @@ require("packer").startup(function()
 		},
 	})
 	use({ "MunifTanjim/exrc.nvim", requires = { { "MunifTanjim/nui.nvim" } } })
+	use({ "lukas-reineke/indent-blankline.nvim" })
 end)
