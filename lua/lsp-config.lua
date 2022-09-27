@@ -167,6 +167,30 @@ lsp_config.cmake.setup({
 	end,
 })
 
+lsp_config.tailwindcss.setup({
+	capabilities = capabilities,
+	on_attach = function(client, buffer)
+		OnAttachKeys(client, buffer)
+		OnAttachNavic(client, buffer)
+	end,
+})
+
+lsp_config.emmet_ls.setup({
+	on_attach = function(client, buffer)
+		OnAttachKeys(client, buffer)
+	end,
+	capabilities = capabilities,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
+	init_options = {
+		html = {
+			options = {
+				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+				["bem.enabled"] = true,
+			},
+		},
+	},
+})
+
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 lsp_config.jsonls.setup({
 	capabilities = capabilities,
