@@ -15,7 +15,7 @@ require("packer").startup(function()
 	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
 	use("lewis6991/gitsigns.nvim")
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
-	use("windwp/nvim-autopairs")
+	use("kylechui/nvim-surround")
 	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
