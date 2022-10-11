@@ -26,7 +26,7 @@ function OnAttachKeys(client, buffer)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 end
 
- function OnAttachNavic(client, buffer)
+function OnAttachNavic(client, buffer)
 	navic.attach(client, buffer)
 end
 
@@ -130,13 +130,13 @@ lsp_config.yamlls.setup({
 	-- cmd = lsp_containers.command("yamlls"),
 })
 
-lsp_config.vuels.setup({
+lsp_config.volar.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		OnAttachKeys(client, buffer)
 		OnAttachNavic(client, buffer)
 	end,
-	-- cmd = lsp_containers.command("vuels"),
+	-- cmd = lsp_containers.command("volar"),
 })
 
 lsp_config.cucumber_language_server.setup({
