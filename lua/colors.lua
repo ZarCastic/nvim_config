@@ -1,4 +1,6 @@
--- vim.g.tokyonight_style = "night"
--- vim.cmd[[colorscheme tokyonight]]
-
-require("monokai").setup({})
+-- require("monokai").setup({})
+require("catppuccin").setup({
+	flavour = "mocha", -- mocha, macchiato, frappe, latte
+})
+-- vim.api.nvim_command("colorscheme catppuccin")
+vim.api.nvim_command("colorscheme carbonfox")
