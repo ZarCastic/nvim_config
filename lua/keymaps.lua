@@ -1,5 +1,5 @@
 -- general configuration
-vim.api.nvim_set_keymap("n", "<CR>", ":w<cr>:noh<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<CR>", ":Neoformat<cr>:w<cr>:noh<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Esc>", ":noh<cr>", { noremap = true })
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>f", ":Neoformat<cr>", { noremap = true, silent = true })
@@ -21,13 +21,13 @@ vim.api.nvim_set_keymap("n", "<leader>vs", ":vs<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>t", ":sp<CR> :term<CR> :resize 20<CR> i", { noremap = true })
 
 -- telescope
-vim.api.nvim_set_keymap("n", "<C-P>", "<cmd>Telescope find_files hidden=true<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-P>", "<cmd>Telescope find_files hidden=true<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-F>", "<cmd>Telescope live_grep<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-B>", "<cmd>Telescope buffers<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-A>", "<cmd>Telescope marks<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-A>", "<cmd>Telescope marks<cr>", { noremap = true })
 
 -- nvim tree
-vim.api.nvim_set_keymap("n", "<C-N>", "<cmd>:CHADopen<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-N>", "<cmd>:NvimTreeFindFileToggle<cr>", { noremap = true })
 
 -- lsp
 local opts = { noremap = true, silent = true }
