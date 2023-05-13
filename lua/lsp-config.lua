@@ -111,16 +111,15 @@ lsp_config.rust_analyzer.setup({
 	settings = {
 		["rust-analyzer"] = { checkOnSave = { command = "clippy" } },
 	},
-	-- cmd = lsp_containers.command("rust_analyzer"),
 })
 
-lsp_config.sumneko_lua.setup({
+lsp_config.lua_ls.setup({
 	capabilities = capabilities,
 	on_attach = function(client, buffer)
 		OnAttachKeys(client, buffer)
 		OnAttachNavic(client, buffer)
 	end,
-	cmd = lsp_containers.command("sumneko_lua"),
+	-- cmd = lsp_containers.command("lua_ls"),
 	settings = {
 		Lua = {
 			diagnostics = {
