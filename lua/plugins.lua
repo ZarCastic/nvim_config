@@ -76,4 +76,5 @@ lazy.setup({
 	{ "catppuccin/nvim", as = "catppuccin" },
 	"EdenEast/nightfox.nvim",
 	{ "Shatur/neovim-session-manager", dependencies = { { "nvim-lua/plenary.nvim" } } },
+	{ "renerocksai/telekasten.nvim", requires = { "nvim-telescope/telescope.nvim", "renerocksai/calendar-vim" } }
 })
